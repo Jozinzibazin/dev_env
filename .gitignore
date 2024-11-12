@@ -1,10 +1,5 @@
 #python stuff
-.pylintrc
-__pycache__/
 
 #ide stuff
-.vscode
-.idea
 
 #django stuff
-db.sqlite3
