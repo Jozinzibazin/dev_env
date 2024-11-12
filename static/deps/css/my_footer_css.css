@@ -1,0 +1,7 @@
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: pink;
+    padding: 10px 0;
+  }

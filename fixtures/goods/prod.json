@@ -1,0 +1,170 @@
+[
+    {
+        "model": "goods.products",
+        "pk": 1,
+        "fields": {
+            "name": "Розы красные",
+            "slug": "rozy-krasnye",
+            "description": "Букет из красных роз",
+            "image": "",
+            "price": "150.00",
+            "discount": "0.00",
+            "quantity": 50,
+            "category": 6
+        }
+    },
+    {
+        "model": "goods.products",
+        "pk": 2,
+        "fields": {
+            "name": "Ромашки луговые",
+            "slug": "romashki-lugovye",
+            "description": "Букет из луговых ромашек",
+            "image": "",
+            "price": "93.00",
+            "discount": "0.00",
+            "quantity": 100,
+            "category": 7
+        }
+    },
+    {
+        "model": "goods.products",
+        "pk": 3,
+        "fields": {
+            "name": "Гипсофилы обыкновенные",
+            "slug": "gipsofily-obyknovennye",
+            "description": "Букет из гипсофил",
+            "image": "",
+            "price": "670.00",
+            "discount": "0.00",
+            "quantity": 25,
+            "category": 10
+        }
+    },
+    {
+        "model": "goods.products",
+        "pk": 4,
+        "fields": {
+            "name": "Пионы белые",
+            "slug": "piony-belye",
+            "description": "Букет из белых пионов",
+            "image": "",
+            "price": "365.00",
+            "discount": "0.00",
+            "quantity": 50,
+            "category": 8
+        }
+    },
+    {
+        "model": "goods.products",
+        "pk": 5,
+        "fields": {
+            "name": "Астры красные",
+            "slug": "astry-krasnye",
+            "description": "Букет из красных астр",
+            "image": "",
+            "price": "430.00",
+            "discount": "0.00",
+            "quantity": 75,
+            "category": 9
+        }
+    },
+    {
+        "model": "goods.products",
+        "pk": 6,
+        "fields": {
+            "name": "Букет из ромашек и луговых трав",
+            "slug": "buket-iz-romashek-i-lugovyh-trav",
+            "description": "Букет из ромашек и луговых трав",
+            "image": "",
+            "price": "610.00",
+            "discount": "0.00",
+            "quantity": 5,
+            "category": 5
+        }
+    },
+    {
+        "model": "goods.products",
+        "pk": 7,
+        "fields": {
+            "name": "Венок из еловых веток",
+            "slug": "venok-iz-elovyh-vetok",
+            "description": "Венок из ароматных еловых веток",
+            "image": "",
+            "price": "55.00",
+            "discount": "0.00",
+            "quantity": 60,
+            "category": 5
+        }
+    },
+    {
+        "model": "goods.products",
+        "pk": 8,
+        "fields": {
+            "name": "Буект из магнолий и георгин",
+            "slug": "buekt-iz-magnolij-i-georgin",
+            "description": "Душистый букет из магнолий и георгин",
+            "image": "",
+            "price": "190.00",
+            "discount": "0.00",
+            "quantity": 3,
+            "category": 5
+        }
+    },
+    {
+        "model": "goods.products",
+        "pk": 9,
+        "fields": {
+            "name": "Экибана японская",
+            "slug": "ekibana-yaponskaya",
+            "description": "Экибана классическая",
+            "image": "",
+            "price": "30.00",
+            "discount": "0.00",
+            "quantity": 0,
+            "category": 5
+        }
+    },
+    {
+        "model": "goods.products",
+        "pk": 10,
+        "fields": {
+            "name": "Весенний букет",
+            "slug": "vesennij-buket",
+            "description": "Букет из ландышей и тюльпанов",
+            "image": "",
+            "price": "10.00",
+            "discount": "0.00",
+            "quantity": 3,
+            "category": 5
+        }
+    },
+    {
+        "model": "goods.products",
+        "pk": 11,
+        "fields": {
+            "name": "Цветок стилизированный",
+            "slug": "cvetok-stilizirovannyj",
+            "description": "Дизайнерский цветок (возможно искусственный) для украшения интерьера",
+            "image": "",
+            "price": "15.00",
+            "discount": "0.00",
+            "quantity": 132,
+            "category": 5
+        }
+    },
+    {
+        "model": "goods.products",
+        "pk": 12,
+        "fields": {
+            "name": "Сладкий буект из шоколада",
+            "slug": "sladkij-buekt-iz-shokolada",
+            "description": "Сладкий буект из шоколада",
+            "image": "",
+            "price": "25.00",
+            "discount": "0.00",
+            "quantity": 33,
+            "category": 5
+        }
+    }
+]

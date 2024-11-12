@@ -1,0 +1,99 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="row">
+    <!-- Форма фильтров -->
+    <div class="dropdown mb-2"> <!-- Определяет выпадающее меню для фильтров товаров -->
+        <button class="btn btn-secondary dropdown-toggle btn-dark" type="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Фильтры
+        </button>
+
+        <form action="" method="get" class="dropdown-menu bg-dark" data-bs-theme="dark"> <!-- Форма, которая отправляется методом GET выпадающее меню -->
+            <div class="form-check text-white mx-3"> <!-- Создает чекбокс для фильтрации товаров "по акции", добавляя поля для имени и ID элемента -->
+                <input class="form-check-input" type="checkbox" name="on_sale" id="flexCheckDefault" value="on">
+                <input type="hidden" name="q" value="request.GET.q">
+                <label class="form-check-label" for="flexCheckDefault"> <!-- Метка для чекбокса, описывающая назначение -->
+                    Цветы по акции
+                </label>
+            </div>
+            <p class="text-white mx-3 mt-3">Сортировать:</p> <!-- Заголовок раздела для вариантов сортировки -->
+            <div class="form-check text-white mx-3"> <!-- Радио-кнопка для сортировки по умолчанию. Установлена как выбранная -->
+                <input class="form-check-input" type="radio" name="order_by" id="flexRadioDefault1" value="default" checked>
+                <label class="form-check-label" for="flexRadioDefault1">
+                    По умолчанию
+                </label>
+            </div>
+            <div class="form-check text-white mx-3"> <!-- Два варианта сортировки по цене от дешевых к дорогим и наоборот -->
+                <input class="form-check-input" type="radio" name="order_by" id="flexRadioDefault2" value="price">
+                <label class="form-check-label" for="flexRadioDefault2">
+                    От дешевых к дорогим
+                </label>
+            </div>
+            <div class="form-check text-white mx-3">
+                <input class="form-check-input" type="radio" name="order_by" id="flexRadioDefault3" value="-price">
+                <label class="form-check-label" for="flexRadioDefault3">
+                    От дорогих к дешевым
+                </label>
+            </div>
+            <button type="submit" class="btn btn-primary mx-3 mt-3">Применить</button> <!-- Кнопка отправки формы -->
+        </form>
+    </div>
+
+    {% for product in goods %} <!-- Начало цикла for, который перебирает все товары из списка goods -->
+    
+    <!-- Карта товара -->
+    <div class="col-lg-4 col-md-6 p-4"> <!-- Создает карточку для товара, рамка и тени -->
+        <div class="card border-primary rounded custom-shadow">
+            {% if product.image %} <!-- Показывает изображение товара, если оно есть, иначе изображение по умолчанию -->
+                <img src="{{ product.image.url }}" class="card-img-top" alt="product.name">
+            {% else %}
+                <img src="{% static 'deps/images/Not found image.png' %}" class="card-img-top" alt="..."> 
+            {% endif %}
+            <div class="card-body"> <!-- Заголовок карточки с именем товара, который ссылается на детальную страницу -->
+                <a href="../goods/product.html">
+                    <p class="card-title">{{ product.name }}</p>
+                </a>
+                <p class="card-text text-truncate">{{ product.description }}</p> <!-- Описание товара -->
+                <p class="product_id">id: {{ product.display_id }} </p>
+                <div class="d-flex justify-content-between"> <!-- Цена товара и кнопка добавления в корзину с иконкой -->
+
+                    {% if product.discount %}
+                        <p><s>{{ product.price }}</s> ₽</p>
+                        <p><strong> {{ product.sell_price }} ₽ </strong></p>
+                        <span class="badge bg-warning text-dark"> Скидка {{ product.discount }} %</span>
+                    {% else %}
+                        <p><strong>{{ product.price }} ₽</strong></p>
+                    {% endif %}
+                    
+                    <!-- <p><strong>100.00 $</strong></p> -->
+                    <a href="#" class="btn add-to-cart">
+                        <img class="mx-1" src="{% static 'deps/icons/cart-plus.svg' %}" alt="Catalog Icon"
+                            width="32" height="32">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+</div>
+<!-- Пагинация -->
+<!-- Структура пагинации с кнопками перехода между страницами, которые позволяют перемещаться по страницам товаров -->
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center my-4">
+        <div class="custom-shadow d-flex">
+            <li class="page-item disabled">
+              <a class="page-link">Previous</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#">Next</a>
+            </li>
+        </div>
+    </ul>
+</nav>
+{% endblock %}
