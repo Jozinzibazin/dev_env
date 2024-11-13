@@ -7,11 +7,11 @@
         <div class="row"> <!-- Создаёт строку, которая содержит элементы в колонках -->
             <!-- Миниатюры -->
             <div class="col-md-4"> <!-- Колонка шириной в 4 колонки из 12, содержащая миниатюру изображения с Bootstrap -->
-                <img src="../deps/images/goods/set of tea table and three chairs.jpg"
+                <img src="{{ product.image.url }}"
                     class="img-thumbnail" data-bs-toggle="modal" data-bs-target="#imageModal1">
             </div>
             <div class="col-md-4"> <!-- Вторая колонка шириной в 4 колонки, где указан идентификатор товара -->
-                <p class="product_id mt-3">id: 002654</p>
+                <p class="product_id mt-3">id: {{ product.display_id }}</p>
             </div>
             <!-- Увеличить изображение в модальном окне -->
             <!-- Модальное окно, которое открывается при клике по миниатюре -->
@@ -20,12 +20,12 @@
                 <div class="modal-dialog modal-lg"> <!-- задаёт большой размер окна -->
                     <div class="modal-content"> <!-- основной контент модального окна, включая заголовок окна и кнопку закрытия -->
                         <div class="modal-header">
-                            <h5 class="modal-title" id="imageModal1Label">Изображение 1</h5>
+                            <h5 class="modal-title" id="imageModal1Label">{{ product.name }}</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                 aria-label="Закрыть"></button>
                         </div>
                         <div class="modal-body"> <!-- основная часть окна с изображением в полном размере -->
-                            <img src="../deps/images/goods/set of tea table and three chairs.jpg"
+                            <img src="{{ product.image.url }}"
                                 class="img-fluid" alt="Изображение 1">
                         </div>
                     </div>
@@ -34,9 +34,9 @@
         </div>
         <!-- Описание товара -->
         <div class="card-body">
-            <p class="card-text">Цена: <strong>150.00 </strong></p>
-            <h5 class="card-title">Букет из ромашек</h5>
-            <p class="card-text">Букет из ромашек</p>
+            <p class="card-text">Цена: <strong>{{ product.sell_price }} </strong></p>
+            <h5 class="card-title">{{ product.name }}</h5>
+            <p class="card-text">{{ product.description }}</p>
             <a href="#" class="btn btn-dark add-to-cart">Добавить в корзину</a>
         </div>
     </div>

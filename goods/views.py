@@ -15,5 +15,11 @@ def catalog(request): # Определяеn представление view дл
     return render(request, "goods/catalog.html", context)
 
 
-def product(request):# Определяем представление (view) для маршрута, который отображает отдельную страницу продукта
-    return render(request, "goods/Products.html")
+def product(request, product_slug):# Определяем представление (view) для маршрута, который отображает отдельную страницу продукта
+    product: Products = Products.objects.get(slug=product_slug)
+    
+    context: dict[str, Products] = {
+        'product': product
+    }
+    
+    return render(request, "goods/Product.html", context=context)
