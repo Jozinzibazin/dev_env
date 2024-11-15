@@ -58,8 +58,8 @@
                             </ul>
                         </li>
                     </ul>
-                    <form class="d-flex" role="search">  <!-- Форма поиска -->
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">  <!-- Поле для ввода запроса -->
+                    <form class="d-flex" role="search" action="{% url "catalog:search" %}" method="get">  <!-- Форма поиска -->
+                        <input class="form-control me-2" type="search" name="q" placeholder="Search" aria-label="Search">  <!-- Поле для ввода запроса -->
                         <button class="btn btn-outline-success text-white" type="submit">Поиск</button>  <!-- Кнопка поиска -->
                     </form>
                 </div>

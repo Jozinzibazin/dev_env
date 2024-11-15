@@ -6,6 +6,7 @@ app_name = 'goods'# Устанавливаем имя приложения, чт
 
  # Список, который содержит все маршруты URL для данного приложения. Каждый маршрут сопоставляется с представлением
 urlpatterns = [
+    path('seacrh/', views.catalog, name='search'),
     path('<slug:category_slug>/', views.catalog, name='index'),  # URL '' будет соответствовать представлению catalog из файла views
     path('product/<slug:product_slug>/', views.product, name='product'), #URL 'product/' будет соответствовать представлению product из файла views
 ]

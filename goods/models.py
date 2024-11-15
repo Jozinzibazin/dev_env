@@ -30,6 +30,7 @@ class Products(models.Model):# Создаём модель Products для ба�
         db_table = 'product'  # Убрано двоеточие
         verbose_name = 'Продукт'
         verbose_name_plural = 'Продукты'
+        ordering = ("id",)
 
     def __str__(self) -> str:
         return f'{self.name} Количество - {self.quantity}'
