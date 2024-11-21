@@ -24,8 +24,9 @@ from app import settings
 urlpatterns = [
     path('admin/', admin.site.urls), #/admin/ который связывается с административным сайтом (admin.site.urls)
     path('', include('main.urls', namespace='main')), #главная страница сайта ''
-    path('catalog/', include('goods.urls', namespace='catalog')) #Путь /catalog/ который включает маршруты из файла urls.py в приложении goods с пространством имен 'catalog'.
-]
+    path('catalog/', include('goods.urls', namespace='catalog')), #Путь /catalog/ который включает маршруты из файла urls.py в приложении goods с пространством имен 'catalog'.
+    path('user/', include('users.urls', namespace='user'))
+    ]
 
 #Проверка, что режим отладки включен для этапа разработки
 if settings.DEBUG:
