@@ -1,5 +1,6 @@
 from itertools import product
-from pyexpat import model
+#from pyexpat import model
+import pyexpat.model as model
 from django.db import models
 
 from goods.models import Products
