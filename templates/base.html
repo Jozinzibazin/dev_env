@@ -41,7 +41,7 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="carts/cart.html">Корзина</a>  <!-- Ссылка на страницу корзины -->
+                            <a class="nav-link text-white" href="{% url "user:users_cart" %}">Корзина</a>  <!-- Ссылка на страницу корзины -->
                         </li>
                         {% if not user.is_authenticated %} <!-- ПРОВЕРКА НА АВТОРИЗИЦИЮ ПОЛЬЗОВАТЕЛЯ. ЕСЛИ НЕ АВТОРИЗИОВАН - ПОКАЗЫВАЕМ НА ВЕРХНЕЙ ПАНЕЛИ ТОЛЬКО КНОПКУ ВОЙТИ, ИНФ О НАС, КОРЗИНА-->
                             <li class="nav-item">
@@ -112,45 +112,12 @@
                                 <h3 class="text-center mb-4">Корзина</h3>
                                 <div class="container" id="cart-items-container">  <!-- Контейнер для товаров в корзине -->
                                     <!-- Разметка корзины -->
-                                    <div class="card mb-3 text-bg-light shadow-lg">
-                                        <div class="card-header">
-                                            <h5 class="card-title">Товар</h5>  <!-- Заголовок товара -->
-                                        </div>
-                                        <ul class="list-group list-group-flush">
-                                            <li class="list-group-item">
-                                                <div class="row text-center">
-                                                    <div class="col p-0">
-                                                        <div class="input-group">
-                                                            <span class="input-group-btn">
-                                                                <button type="button" class="btn btn-dark btn-sm decrement"
-                                                                    data-cart-id="" data-cart-change-url="">-</button>  <!-- Кнопка уменьшения количества товара -->
-                                                            </span>
-                                                            <input type="text" class="form-control number" value="1"
-                                                                readonly>  <!-- Отображение количества товара -->
-                                                            <span class="input-group-btn">
-                                                                <button type="button" class="btn btn-dark btn-sm increment"
-                                                                    data-cart-id="" data-cart-change-url="">+</button>  <!-- Кнопка увеличения количества товара -->
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col p-0">
-                                                        <p>x 100.00 = </p>  <!-- Умножение стоимости товара -->
-                                                    </div>
-                                                    <div class="col p-0"><strong>100.00 $</strong></div>  <!-- Итоговая стоимость товара -->
-                                                    <div class="col p-0">
-                                                        <a href="#" class="remove-from-cart" data-cart-id="">  <!-- Кнопка удаления товара из корзины -->
-                                                            <img class="mx-1" src="{% static 'deps/icons/trash3-fill.svg' %}"
-                                                                alt="Catalog Icon" width="16" height="16">
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
+                                    {% include "carts/includes/included_cart.html" %}
+                                    <!--Разметка страницы закончилась-->
                                     <div class="card mb-3 shadow-lg">
                                         <div class="card-footer">
                                             <p class="float-left">Итого <strong>1</strong> товар(а) на сумму</p>
-                                            <h4 class="float-left"><strong>100.00 $</strong></h4>  <!-- Итоговая сумма корзины -->
+                                            <h4 class="float-left"><strong>100.00 ₽</strong></h4>  <!-- Итоговая сумма корзины -->
                                         </div>
                                     </div>
                                 </div>
