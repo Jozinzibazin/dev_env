@@ -1,6 +1,10 @@
 {% extends "base.html" %} <!-- Наследует шаблон base.html из папки main -->
 {% load static %}
 
+{% block modal_cart %}
+{% include "includes/cart_button.html" %}
+{% endblock  %}
+
 {% block content %}
 <div class="container mt-5"> <!-- Создаёт контейнер с отступом сверху -->
     <div class="card mb-4 custom-shadow"> <!-- Определяет карточку с отступом снизу -->
