@@ -27,6 +27,7 @@ urlpatterns = [
     path('catalog/', include('goods.urls', namespace='catalog')), #Путь /catalog/ который включает маршруты из файла urls.py в приложении goods с пространством имен 'catalog'.
     path('user/', include('users.urls', namespace='user')),
     path('cart/', include('carts.urls', namespace='cart')),
+    path('orders/', include('orders.urls', namespace='orders')),
     ]
 
 #Проверка, что режим отладки включен для этапа разработки

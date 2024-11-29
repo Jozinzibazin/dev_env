@@ -28,7 +28,7 @@
                     <!--Разметка страницы закончилась-->
                 </div>
                 {% if carts %}
-                    <a class="btn btn-dark" href="orders/create_order.html">  <!-- Кнопка для оформления заказа -->
+                    <a class="btn btn-dark" href="{% url "orders:create_order" %}">  <!-- Кнопка для оформления заказа -->
                         Оформить заказ
                     </a>
                 {% endif %}
