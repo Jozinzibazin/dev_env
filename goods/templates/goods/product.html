@@ -14,9 +14,9 @@
                 <img src="{{ product.image.url }}"
                     class="img-thumbnail" data-bs-toggle="modal" data-bs-target="#imageModal1">
             </div>
-            <div class="col-md-4"> <!-- Вторая колонка шириной в 4 колонки, где указан идентификатор товара -->
+            {% comment %} <div class="col-md-4"> <!-- Вторая колонка шириной в 4 колонки, где указан идентификатор товара -->
                 <p class="product_id mt-3">id: {{ product.display_id }}</p>
-            </div>
+            </div> {% endcomment %}
             <!-- Увеличить изображение в модальном окне -->
             <!-- Модальное окно, которое открывается при клике по миниатюре -->
             <div class="modal fade" id="imageModal1" tabindex="-1"

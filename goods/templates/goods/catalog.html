@@ -89,7 +89,7 @@
                             {% endif %}
                         {% endautoescape %}
                 </p> <!-- Описание товара -->
-                <p class="product_id">id: {{ product.display_id }} </p>
+                {% comment %} <p class="product_id">id: {{ product.display_id }} </p> {% endcomment %}
                 <div class="d-flex justify-content-between"> <!-- Цена товара и кнопка добавления в корзину с иконкой -->
 
                     {% if product.discount %}

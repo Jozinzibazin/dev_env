@@ -83,11 +83,22 @@
                         <img class="mx-1" src="{% static 'deps/icons/grid-fill.svg' %}" alt="Catalog Icon" width="16"
                             height="16">  <!-- Кнопка для раскрытия списка категорий -->
                     </button>
-                    <ul class="dropdown-menu bg-dark" data-bs-theme="dark">  <!-- Список категорий -->
-                        {% tag_categories as categories %}
+                    <ul class="dropdown-menu bg-dark" data-bs-theme="dark">  <!-- Список категорий -->   
+                        {% tag_categories as categories %}   
+                    
+                        {# Сначала выводим категорию "Все товары" #}
                         {% for category in categories %}
-                        <li><a class="dropdown-item text-white" href="{% url 'catalog:index' category.slug %}">{{category.name}}</a></li>
+                            {% if category.name == "Все товары" %}
+                                <li><a class="dropdown-item text-white" href="{% url 'catalog:index' category.slug %}">{{ category.name }}</a></li> 
+                            {% endif %}
                         {% endfor %}
+                    
+                        {# Далее выводим остальные категории, отсортированные по имени #}
+                        {% for category in categories|dictsort:"name" %}
+                            {% if category.name != "Все товары" %}
+                                <li><a class="dropdown-item text-white" href="{% url 'catalog:index' category.slug %}">{{ category.name }}</a></li> 
+                            {% endif %}
+                        {% endfor %} 
                     </ul>
                 </div>
                 <!-- Значек корзины, вызывает модальное окно -->

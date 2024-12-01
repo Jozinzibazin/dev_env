@@ -24,7 +24,7 @@ def catalog(request, category_slug=None): # Определяеn представ
     if order_by and order_by != "default":
         goods = goods.order_by(order_by)
         
-    paginator = Paginator(goods, 3)
+    paginator = Paginator(goods, 6)
     current_page = paginator.page(int(page))
     
     context: dict[str, str] = {# Создаём контекст (словарь), который будет передан в шаблон
