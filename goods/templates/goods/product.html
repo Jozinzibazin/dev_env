@@ -10,7 +10,7 @@
     <div class="card mb-4 custom-shadow"> <!-- Определяет карточку с отступом снизу -->
         <div class="row"> <!-- Создаёт строку, которая содержит элементы в колонках -->
             <!-- Миниатюры -->
-            <div class="col-md-4"> <!-- Колонка шириной в 4 колонки из 12, содержащая миниатюру изображения с Bootstrap -->
+            <div class="col-md-6"> <!-- Колонка шириной в 4 колонки из 12, содержащая миниатюру изображения с Bootstrap -->
                 <img src="{{ product.image.url }}"
                     class="img-thumbnail" data-bs-toggle="modal" data-bs-target="#imageModal1">
             </div>
@@ -38,7 +38,7 @@
         </div>
         <!-- Описание товара -->
         <div class="card-body">
-            <p class="card-text">Цена: <strong>{{ product.sell_price }} </strong></p>
+            <p class="card-text">Цена за цветок в рублях: <strong>{{ product.sell_price }} </strong></p>
             <h5 class="card-title">{{ product.name }}</h5>
             <p class="card-text">{{ product.description }}</p>
             <a href="{% url "cart:cart_add" %}" class="btn btn-dark add-to-cart"
