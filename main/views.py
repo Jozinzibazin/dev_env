@@ -1,7 +1,10 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 
 from goods.models import Categories # Импортирует модель Categories из приложения 'goods' для работы с данными категорий
+
+def home(request):
+    return redirect('goods:catalog_index')
 
 def index(request): # Определяет представление для главной страницы, обрабатывающее запросы по маршруту '/'
 
