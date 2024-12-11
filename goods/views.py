@@ -42,4 +42,4 @@ def product(request, product_slug):# Определяем представлен
         'product': product
     }
     
-    return render(request, "goods/Product.html", context=context)
+    return render(request, "goods/product.html", context=context)
