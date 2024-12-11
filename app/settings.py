@@ -29,7 +29,8 @@ SECRET_KEY = 'django-insecure-)w^2um7f#fe01b6a86gp$91#(m0=5y3=sl36@r(iq7omp&c4$i
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True #Отладочная информация об ошибках
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '194.87.133.60']
+
 
 
 # Application definition
@@ -158,6 +159,7 @@ INTERNAL_IPS = [
     "127.0.0.1",
     # ...
 ]
+
 
 
 # Default primary key field type
