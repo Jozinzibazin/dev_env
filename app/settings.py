@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 
 from django.conf.global_settings import AUTH_USER_MODEL 
-import os
+#import os
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-)w^2um7f#fe01b6a86gp$91#(m0=5y3=sl36@r(iq7omp&c4$i
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True #Отладочная информация об ошибках
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '194.87.133.60', 'may-flowers.site']
+ALLOWED_HOSTS = []
 
 
 
@@ -98,9 +98,9 @@ WSGI_APPLICATION = 'app.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'ivandb',
-        'USER': 'ivan',
-        'PASSWORD': 'strong_password',
+        'NAME': 'home',
+        'USER': 'home',
+        'PASSWORD': 'home',
         'HOST': 'localhost',
         'PORT': '5432',
     }
@@ -143,7 +143,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+#STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATICFILES_DIRS = [
     BASE_DIR / 'static'
