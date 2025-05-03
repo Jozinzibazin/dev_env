@@ -13,11 +13,13 @@ jedi==0.19.1
 matplotlib-inline==0.1.7   
 mccabe==0.7.0
 parso==0.8.4
+aiogram==3.20.0.post0
+asyncpg==0.30.0
+python-dotenv==1.1.0
 pillow==11.0.0
 platformdirs==4.3.6        
 prompt_toolkit==3.0.48     
 psycopg==3.2.3
-psycopg2==2.9.10
 psycopg2-binary==2.9.10    
 pure_eval==0.2.3
 Pygments==2.18.0
